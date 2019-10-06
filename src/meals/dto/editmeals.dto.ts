@@ -1,21 +1,19 @@
 import {IsNotEmpty, IsOptional} from "class-validator";
 
-export class GetmealsfilterDto {
+export class EditmealsDto {
+    @IsOptional()
+    @IsNotEmpty()
+    calories: number;
 
     @IsOptional()
     @IsNotEmpty()
-    fromDate: string;
+    name: string;
 
     @IsOptional()
     @IsNotEmpty()
-    toDate: string;
+    date: string;
 
     @IsOptional()
     @IsNotEmpty()
-    fromTime: string;
-
-    @IsOptional()
-    @IsNotEmpty()
-    toTime: string;
-
+    time: string;
 }

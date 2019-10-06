@@ -8,5 +8,8 @@ export class CreatemealsDto {
     name: string;
 
     @IsNotEmpty()
-    description: string;
+    date: string;
+
+    @IsNotEmpty()
+    time: string;
 }

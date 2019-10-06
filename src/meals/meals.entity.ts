@@ -1,7 +1,7 @@
 import {BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn} from "typeorm";
 import {User} from "../users/user.entity";
 import DateTimeFormat = Intl.DateTimeFormat;
-import {TimeInterval} from "rxjs";
+import {TimeInterval, Timestamp} from "rxjs";
 import {timeInterval, timestamp} from "rxjs/operators";
 import DateTimeFormatPart = Intl.DateTimeFormatPart;
 import {type} from "os";
@@ -18,7 +18,10 @@ export class Meal extends BaseEntity {
     Calories: number;
 
     @Column()
-    description: string;
+    date: string;
+
+    @Column()
+    time: string;
 
     @ManyToOne(type => User, user => user.meals)
     user: User;
